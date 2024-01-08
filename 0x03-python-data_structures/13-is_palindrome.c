@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
-
+/**
+ * is_palindrome - Check if a linked list of integers is a palindrome.
+ * @head: Double pointer to the head of the linked list.
+ * Return: 1 if the linked list is a palindrome, 0 otherwise.
+ */
 int is_palindrome(listint_t **head)
 {
 	listint_t *temp, *fptr, *lptr;
@@ -11,10 +15,10 @@ int is_palindrome(listint_t **head)
 		return (1);
 	temp = *head;
 
-	while(temp != NULL)
+	while (temp != NULL)
 	{
 		count++;
-		temp = temp -> next;
+		temp = temp->next;
 	}
 
 	if (count == 1)
@@ -24,14 +28,14 @@ int is_palindrome(listint_t **head)
 
 	while (i <= half_way)
 	{
-		while(j < count)
+		while (j < count)
 		{
-			lptr = lptr -> next;
+			lptr = lptr->next;
 			j++;
 		}
-		if (fptr -> n != lptr -> n)
+		if (fptr->n != lptr->n)
 			return (0);
-		fptr = fptr -> next;
+		fptr = fptr->next;
 		lptr = *head;
 		i++;
 		j = 1;
