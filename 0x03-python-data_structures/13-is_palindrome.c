@@ -8,39 +8,51 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *temp, *fptr, *lptr;
-	int half_way, count = 0, i = 1, j = 1;
+	listint_t *current , *nextptr, *reverse = NULL, *temp, *newnode;
 
-	if (*head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-	temp = *head;
 
+	current = nextptr = *head;
+
+	while (nextptr != NULL && nextptr->next != NULL)
+	{
+		nextptr = nextptr->next->next;
+		newnode = (listint_t *)malloc(sizeof(listint_t));
+		newnode->n = current->n;
+		newnode->next = reverse;
+		reverse = newnode;
+		current = current->next;
+	}
+
+	temp = reverse;
+
+	if (nextptr != NULL)
+		current = current->next;
+
+	while (current != NULL)
+	{
+		if (reverse->n != current->n)
+		{
+			reverse = temp;
+			while(temp != NULL)
+			{
+				temp = temp->next;
+				free(reverse);
+				reverse = temp;
+			}
+			return (0);
+		}
+		reverse = reverse->next;
+		current = current->next;
+	}
+
+	reverse = temp;
 	while (temp != NULL)
 	{
-		count++;
 		temp = temp->next;
+		free(reverse);
+		reverse = temp;
 	}
-
-	if (count == 1)
-		return (1);
-	fptr = lptr = *head;
-	half_way = count / 2;
-
-	while (i <= half_way)
-	{
-		while (j < count)
-		{
-			lptr = lptr->next;
-			j++;
-		}
-		if (fptr->n != lptr->n)
-			return (0);
-		fptr = fptr->next;
-		lptr = *head;
-		i++;
-		j = 1;
-		count--;
-	}
-
 	return (1);
 }
