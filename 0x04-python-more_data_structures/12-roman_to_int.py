@@ -6,7 +6,7 @@ def roman_to_int(roman_string):
     sum = rdic[roman_string[0]]
     for i in range(1, len(roman_string)):
         if rdic[roman_string[i]] <= rdic[roman_string[i - 1]]:
-            sum = sum + roman_dict[roman_string[i]]
+            sum = sum + rdic[roman_string[i]]
         else:
             sum = sum + rdic[roman_string[i]] - 2 * rdic[roman_string[i - 1]]
     return sum
