@@ -6,6 +6,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <object.h>
+
+void print_python_float(PyObject *p);
+void print_python_float(PyObject *p);
+
 /**
  * print_python_list - print python list
  * @p: pointer to PyObject p
