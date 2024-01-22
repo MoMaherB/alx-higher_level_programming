@@ -27,7 +27,7 @@ void print_python_list(PyObject *p)
         len = PyList_GET_SIZE(p);
         a = my_list->allocated;
         printf("[*] Size of the Python List = %ld\n[*] Allocated = %li\n", len, a);
-        while (i < size)
+        while (i < len)
         {
                 ch = (my_list->ob_item[i])->ob_type->tp_name;
                 printf("Element %li: %s\n", i, ch);
