@@ -73,7 +73,7 @@ void print_python_bytes(PyObject *p)
 	printf("%02hhx\n", s[i]);
 }
 /**
- * print_python_float - print python things
+ * print_python_float - print float
  * @p: pointer to PyObject p
  */
 void print_python_float(PyObject *p)
