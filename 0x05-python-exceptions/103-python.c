@@ -22,6 +22,7 @@ void print_python_list(PyObject *p)
 
         setbuf(stdout, NULL);
         printf("[*] Python list info\n");
+
         if (PyList_Check(p) == 0)
         {
                 printf("  [ERROR] Invalid List Object\n");
@@ -46,8 +47,8 @@ void print_python_list(PyObject *p)
  */
 void print_python_bytes(PyObject *p)
 {
-	size_t b, i;
-	char *str;
+	size_t len, i = 0;
+	char *s;
 
 	setbuf(stdout, NULL);
 	printf("[.] bytes object info\n");
@@ -56,13 +57,20 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
-	str = ((PyBytesObject *)(p))->ob_sval, b = PyBytes_Size(p);
-	printf("  size: %ld\n  trying string: %s\n", b, str);
-	b >= 10 ? b = 10 : b++;
-	printf("  first %ld bytes: ", b);
-	for (i = 0; i < b - 1; i++)
-		printf("%02hhx ", str[i]);
-	printf("%02hhx\n", str[i]);
+	s = ((PyBytesObject *)(p))->ob_sval;
+       	len = PyBytes_Size(p);
+	printf("  size: %ld\n  trying string: %s\n", len, s);
+	if (len >= 10)
+		len = 10;
+	else
+		len++;
+	printf("  first %ld bytes: ", len);
+	while (i < len - 1)
+	{
+		printf("%02hhx ", s[i]);
+		i++;
+	}
+	printf("%02hhx\n", s[i]);
 }
 /**
  * print_python_float - print python things
