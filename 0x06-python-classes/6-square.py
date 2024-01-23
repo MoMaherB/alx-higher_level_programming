@@ -58,6 +58,10 @@ class Square:
 
     def my_print(self):
         """print the square with the giving size  if zero draw newline"""
+        if self.__size == 0:
+            print("")
+            return
+
         for lines in range(self.__position[1]):
             print("")
         for i in range(self.size):
