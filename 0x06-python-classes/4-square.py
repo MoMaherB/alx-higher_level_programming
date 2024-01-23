@@ -2,9 +2,6 @@
 """Class Square"""
 
 
-from typing import Any
-
-
 class Square:
     """Class Square
     Args:
