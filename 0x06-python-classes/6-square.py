@@ -33,12 +33,12 @@ class Square:
             TypeError and ValueError
     """
     @size.setter
-    def size(self, new_size):
-        if not isinstance(new_size, int):
+    def size(self, value):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if new_size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = new_size
+        self.__size = value
     """
         Getter for position
     """
@@ -60,11 +60,11 @@ class Square:
         if zero draw newline
     """
     def my_print(self):
-        for lines in range(self.position[1]):
+        for lines in range(self.__position[1]):
             print("")
         for i in range(self.size):
-            for k in range(self.position[0]):
+            for k in range(self.__position[0]):
                 print(" ", end="")
-            for j in range(self.size):
+            for j in range(self.__size):
                 print("#", end="")
             print("")
