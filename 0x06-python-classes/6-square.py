@@ -60,6 +60,9 @@ class Square:
         if zero draw newline
     """
     def my_print(self):
+        if self._size == 0:
+            print("")
+            return
         for lines in range(self.__position[1]):
             print("")
         for i in range(self.size):
