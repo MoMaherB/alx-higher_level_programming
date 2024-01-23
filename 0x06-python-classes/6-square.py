@@ -10,9 +10,9 @@ class Square:
         TypeError: if the size is not int
         ValueError: if the size is less than zero
     """
-    def __init__(self, size=0, posision=(0, 0)):
+    def __init__(self, size=0, position=(0, 0)):
         self.size = size
-        self.posision = posision
+        self.position = position
     """
         method that return area based on size
         passed by the user
@@ -40,30 +40,31 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = new_size
     """
-        print the square with the giving size
-        if zero draw newline
+        Getter for position
     """
     @property
-    def posision(self):
-        return self.__posision
-
+    def position(self):
+        return self.__position
+    """
+        setter for position
+    """
     @posision.setter
-    def posision(self, value):
+    def position(self, value):
         if not isinstance(value, tuple) or len(value) != 2 or\
                 not isinstance(value[0], int) or value[0] < 0\
                 or not isinstance(value[1], int) or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__posision = value
-
+        self.__position = value
+    """
+        print the square with the giving size
+        if zero draw newline
+    """
     def my_print(self):
-        if self.size == 0:
+        for lines in range(self.posision[1]):
             print("")
-        else:
-            for lines in range(self.posision[1]):
-                print("")
-            for i in range(self.size):
-                for k in range(self.posision[0]):
-                    print(" ", end="")
-                for j in range(self.size):
-                    print("#", end="")
-                print("")
+        for i in range(self.size):
+            for k in range(self.posision[0]):
+                print(" ", end="")
+            for j in range(self.size):
+                print("#", end="")
+            print("")
