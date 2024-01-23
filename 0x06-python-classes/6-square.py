@@ -48,7 +48,7 @@ class Square:
     """
         setter for position
     """
-    @posision.setter
+    @position.setter
     def position(self, value):
         if not isinstance(value, tuple) or len(value) != 2 or\
                 not isinstance(value[0], int) or value[0] < 0\
@@ -60,10 +60,10 @@ class Square:
         if zero draw newline
     """
     def my_print(self):
-        for lines in range(self.posision[1]):
+        for lines in range(self.position[1]):
             print("")
         for i in range(self.size):
-            for k in range(self.posision[0]):
+            for k in range(self.position[0]):
                 print(" ", end="")
             for j in range(self.size):
                 print("#", end="")
