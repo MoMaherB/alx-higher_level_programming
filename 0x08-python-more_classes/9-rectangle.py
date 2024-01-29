@@ -97,6 +97,16 @@ class Rectangle:
         else:
             return 2 * (self.__height + self.__width)
 
+    @classmethod
+    def square(cls, size=0):
+        """new rectangle as a square with equal heigt and width.
+
+        Args:
+            cls: to access class attributes.
+            size size of rectangle Defaults to 0.
+        """
+        return Rectangle(size, size)
+
     def __str__(self):
         """
             Prints the rectangle with the character # .
@@ -147,13 +157,3 @@ class Rectangle:
         if area_1 >= area_2:
             return rect_1
         return rect_2
-
-    @classmethod
-    def square(cls, size=0):
-        """new rectangle as a square with equal heigt and width.
-
-        Args:
-            cls: to access class attributes.
-            size size of rectangle Defaults to 0.
-        """
-        return Rectangle(size, size)
