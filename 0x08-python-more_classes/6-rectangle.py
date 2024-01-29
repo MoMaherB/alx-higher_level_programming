@@ -19,7 +19,7 @@ class Rectangle:
         """
         self.height = height
         self.width = width
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -127,4 +127,4 @@ class Rectangle:
         Deletes an instance of a class
         """
         print("{:s}".format("Bye rectangle..."))
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
