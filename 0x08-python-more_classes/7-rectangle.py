@@ -110,7 +110,7 @@ class Rectangle:
 
         for i in range(self.__height):
             for j in range(self.__width):
-                rectangle.append(str(Rectangle.print_symbol))
+                rectangle.append(str(self.print_symbol))
             rectangle.append("\n")
 
         rectangle.pop()
