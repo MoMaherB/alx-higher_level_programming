@@ -118,8 +118,7 @@ class Rectangle:
         return "".join(rectangle)
 
     def __repr__(self):
-        """
-        Returns a string representation of the rectangle.
+        """Returns a string representation of the rectangle.
         """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
@@ -132,41 +131,29 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """
-        Computes the area of two rectangles and compares them.
+        """Computes the area of two rectangles and compares them.
 
         Args:
             rect_1: first rectangle.
             rect_2: second rectangle.
-
-        Returns:
-            rectangle with the biggest area else rect_1 if
-            areas are equal
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
 
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-
         area_1 = rect_1.area()
         area_2 = rect_2.area()
-
         if area_1 >= area_2:
             return rect_1
-
         return rect_2
 
     @classmethod
     def square(cls, size=0):
-        """
-        Returns a new rectangle as a square with equal heigt and width.
+        """new rectangle as a square with equal heigt and width.
 
         Args:
             cls: to access class attributes.
-            size size of rectangle (1 side). Defaults to 0.
-
-        Returns:
-            Square: is a rectangle with equal values of height and width.
+            size size of rectangle Defaults to 0.
         """
         return Rectangle(size, size)
