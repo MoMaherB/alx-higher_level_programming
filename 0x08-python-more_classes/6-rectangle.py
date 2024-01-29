@@ -8,6 +8,7 @@ class Rectangle:
     width (int): width of the rectangle.
     height (int): height of the rectangle.
     """
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """New instances of Rectangle.
@@ -18,6 +19,7 @@ class Rectangle:
         """
         self.height = height
         self.width = width
+        number_of_instances += 1
 
     @property
     def width(self):
@@ -125,3 +127,4 @@ class Rectangle:
         Deletes an instance of a class
         """
         print("{:s}".format("Bye rectangle..."))
+        number_of_instances -= 1
