@@ -169,4 +169,4 @@ class Rectangle:
         Returns:
             Square: is a rectangle with equal values of height and width.
         """
-        return cls(size, size)
+        return Rectangle(size, size)
