@@ -159,13 +159,14 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """Returns a new rectangle as a square with equal heigt and width.
+        """
+        Returns a new rectangle as a square with equal heigt and width.
 
         Args:
-            cls: used to access class attributes.
+            cls: to access class attributes.
             size size of rectangle (1 side). Defaults to 0.
 
         Returns:
-            Square: is a rectangle with equal values of height and width .
+            Square: is a rectangle with equal values of height and width.
         """
-        return Rectangle(size, size)
+        return cls(size, size)
