@@ -6,4 +6,4 @@ attributes, except if the new instance attribute is called first_name.
 
 
 class LockedClass:
-    __slots__ = ['first_name']
+    __slots__ = ["first_name"]
