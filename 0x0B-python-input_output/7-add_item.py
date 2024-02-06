@@ -10,5 +10,6 @@ try:
     items = load_from_json_file("add_item.json")
 except Exception:
     items = []
+
 items.extend(list(sys.argv[1:]))
 save_to_json_file(items, "add_item.json")
