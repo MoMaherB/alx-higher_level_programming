@@ -89,8 +89,8 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
         ret = []
-        with open('{}.csv'.format(cls.__name__), 'r', newline='',
-                encoding='utf-8') as f:
+        with open('{}.csv'.format(cls.__name__), 'r',
+                newline='',encoding='utf-8') as f:
             reader = csv.reader(f)
             for row in reader:
                 row = [int(r) for r in row]
