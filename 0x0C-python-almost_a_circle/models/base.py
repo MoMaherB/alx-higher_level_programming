@@ -65,7 +65,8 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
-     @classmethod
+
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         '''Saves object to csv file.'''
         from models.rectangle import Rectangle
@@ -104,7 +105,6 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        import turtle
         import time
         from random import randrange
         turtle.Screen().colormode(255)
