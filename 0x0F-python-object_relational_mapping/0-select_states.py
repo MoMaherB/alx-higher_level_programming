@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import MySQLdb
 import sys
 db = MySQLdb.connect(
@@ -10,7 +10,8 @@ db = MySQLdb.connect(
 if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states")
-    for row in cursor:
+    rows = cursor.fetchall()
+    for row in rows:
         print(row)
     cursor.close()
     db.close()
