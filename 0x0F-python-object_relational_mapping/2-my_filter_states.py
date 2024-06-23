@@ -13,7 +13,7 @@ if __name__ == "__main__":
     state = sys.argv[4]
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE name = {} ORDER BY id".format(state))
+        "SELECT * FROM states WHERE name = '{}' ORDER BY id".format(state))
     rows = cursor.fetchall()
     for row in rows:
         print(row)
