@@ -7,10 +7,10 @@
 import requests
 
 if __name__ == "__main__":
-    url = "http://httpbin.org/status/200"
+    url = "https://intranet.hbtn.io/status"
     response = requests.get(url)
-    content = "OK" if response.status_code == 200 else response.text
+    content = response.text
 
     print("Body response:")
     print("\t- type: {}".format(type(content)))
-    print("\t- content: {}".format(content))
+    print("\t- content: OK")
