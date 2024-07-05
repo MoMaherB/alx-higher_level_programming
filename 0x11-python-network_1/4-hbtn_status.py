@@ -1,16 +1,10 @@
 #!/usr/bin/python3
-"""
-- fetches http://httpbin.org/status/200
-- uses the package requests
-- displays the body of the response
-"""
+"""fetches https://intranet.hbtn.io/status."""
 import requests
 
-if __name__ == "__main__":
-    url = "https://intranet.hbtn.io/status"
-    response = requests.get(url)
-    content = response.text
 
+if __name__ == "__main__":
+    r = requests.get("https://intranet.hbtn.io/status")
     print("Body response:")
-    print("\t- type: {}".format(type(content)))
-    print("\t- content: OK")
+    print("\t- type: {}".format(type(r.text)))
+    print("\t- content: {}".format(r.text))
