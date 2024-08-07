@@ -1,0 +1,4 @@
+#!/bin/bash
+git add .
+git commit -m "JavaScript - Web scraping"
+git push
